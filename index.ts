@@ -1,3 +1,10 @@
+// Lancer le code avec:
+// npx ts-node index.ts
+
+import { main } from "./src/main";
+
+main(); // Placer le code à écécuter dans la méthode main.
+
 
 // Code exemple
 const nom: string = `crevard`; // const -> initialise une constante
@@ -9,5 +16,4 @@ function faisCoucou(nomPersonne?: string) {
 
 faisCoucou(nom);
 
-// run with:
-// npx ts-node index.ts
+
