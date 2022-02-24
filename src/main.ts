@@ -1,3 +1,4 @@
+import { deepStrictEqual } from 'assert';
 import * as fs from 'fs';
 
 export function main(nomFichier: string) { // C'est ici qu'on exécute le code
@@ -8,6 +9,7 @@ export function main(nomFichier: string) { // C'est ici qu'on exécute le code
     // 2) Faire la tambouille
 
     // 3) Ecrire un fichier en output
+    ecrireFichier(nomFichier, `test écriture`);
 }
 
 function lireFichier(nomFichier: string) {
@@ -16,6 +18,12 @@ function lireFichier(nomFichier: string) {
     console.log(file);
 }
 
-function ecrireFichier(nomFichier: string) {
-
+function ecrireFichier(nomFichier: string, contenu: any) {
+    fs.writeFile(nomFichier + `_output.txt`, contenu, (erreur) => {
+        if(erreur) {
+            console.error(`ERREUR LORS DE L'ECRITURE`, erreur);
+        } else {
+            console.log(`Fichier ${nomFichier + `_output.txt`} ecrit!`)
+        }
+    });
 }
