@@ -8,3 +8,6 @@ function faisCoucou(nomPersonne?: string) {
 }
 
 faisCoucou(nom);
+
+// run with:
+// npx ts-node index.ts
