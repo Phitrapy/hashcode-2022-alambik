@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
     "target": "esnext"
+  },
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "dependencies": {
+    "typescript": "^1.8.10"
   }
 }
