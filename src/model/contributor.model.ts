@@ -1,8 +1,8 @@
-import { Project } from "./project.model";
-import { Skill } from "./skills.model";
+import Project from "./project.model";
+import { Skill } from "./skill.model";
 
-export interface Contributor {
+export default interface Contributor {
     nom: string;
     skills: Skill[];
-    project: Project; // pas sûr
+    project?: Project; // pas sûr
 }

@@ -5,7 +5,7 @@
 import { main } from "./src/main";
 
 // récupère le nom du fichier en input:
-const nomFichier = process.argv[2];
+const nomFichier = process.argv[2] || `input/a_an_example.in.txt`;
 
 if (nomFichier){ 
     main(nomFichier); // Placer le code à écécuter dans la méthode main.
