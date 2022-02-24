@@ -4,9 +4,10 @@ import * as fs from 'fs';
 export function main(nomFichier: string) { // C'est ici qu'on exécute le code
     console.log("on est dans le main");
     // 1) Lire un fichier en input
-    lireFichier(nomFichier);
+    const fichier = lireFichier(nomFichier);
 
     // 2) Faire la tambouille
+    tambouiller();
 
     // 3) Ecrire un fichier en output
     ecrireFichier(nomFichier, `test écriture`);
@@ -26,4 +27,8 @@ function ecrireFichier(nomFichier: string, contenu: any) {
             console.log(`Fichier ${nomFichier + `_output.txt`} ecrit!`)
         }
     });
+}
+
+function tambouiller() {
+    console.log(`prout`);
 }
