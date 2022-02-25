@@ -5,8 +5,9 @@ export function main(nomFichier: string) { // C'est ici qu'on exécute le code
     console.log("on est dans le main");
     // 1) Lire un fichier en input
     const fichier = lireFichier(nomFichier);
-    readInputFile(fichier);
-
+    const situation = readInputFile(fichier);
+    console.log(situation);
+    
     // 2) Faire la tambouille
     tambouiller();
 

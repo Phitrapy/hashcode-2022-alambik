@@ -2,8 +2,12 @@
   "name": "typescript",
   "version": "0.0.0",
   "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "devDependencies": {
-    "@types/node": "^17.0.21",
-    "a": "^2.1.2"
+    "@types/node": "^17.0.21"
+  },
+  "compilerOptions": {
+    "declaration": true
   }
 }

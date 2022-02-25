@@ -1,5 +1,5 @@
 import Project from "./project.model";
-import { Skill } from "./skill.model";
+import Skill from "./skill.model";
 
 export default interface Contributor {
     nom: string;

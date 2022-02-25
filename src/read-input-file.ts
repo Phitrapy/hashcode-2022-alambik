@@ -1,9 +1,8 @@
 import Contributor from "./model/contributor.model";
-import Skill from "./model/skill.model";
 import Project from "./model/project.model";
-import { off } from "process";
+import { Situation } from "./model/situation.model";
 
-export function readInputFile(contenu: any) {
+export function readInputFile(contenu: any): Situation {
     const contributors = [];
     const projects = [];
 
@@ -14,7 +13,6 @@ export function readInputFile(contenu: any) {
 
     // 1e ligne
     const [peopleNb, projectNb] = lignes[0].split(` `);
-    console.log(`Contributeurs: ${peopleNb}, Projets: ${projectNb}`)
 
     offset++;
     for (let i = 0; i < Number(peopleNb); i++) {
@@ -25,8 +23,8 @@ export function readInputFile(contenu: any) {
     
         newC = {nom, skills: []};
         for(let j = 0; j < Number(skillsNb); j ++) {
-            const [skill, level] = lignes[1 + i + j + offset].split(` `);
-            newC.skills.push({nom: skill, level});
+            const [skill, niveau] = lignes[1 + i + j + offset].split(` `);
+            newC.skills.push({nom: skill, niveau: Number(niveau)});
         }
 
         contributors.push(newC);
@@ -34,31 +32,23 @@ export function readInputFile(contenu: any) {
         offset+= Number(skillsNb);
     }
 
-    offset++;
-    offset++;
-    offset++;
+    offset+= Number(peopleNb);
+    
     for (let i = 0; i < Number(projectNb); i++) {
-        
-        console.log(`oups`, offset)
-        console.log(`projet`, lignes[i + offset])
         const [nom, duree, score, bestBefore, rolesNb] = lignes[i + offset].split(` `);
         let newP: Project;
     
         newP = {nom, duree, score, bestBefore, skills: []} as any;
 
-        console.log({rolesNb});
         for(let j = 0; j < Number(rolesNb); j ++) {
-            const [skill, level] = lignes[1 + i + j + offset].split(` `);
-            newP.skills.push({nom: skill, level});
+            const [skill, niveau] = lignes[1 + i + j + offset].split(` `);
+            newP.skills.push({nom: skill, niveau: Number(niveau)});
         }
 
-        console.log(newP);
         projects.push(newP);
 
         offset+= Number(rolesNb);
     }
 
-    console.log(`contributeurs`, contributors);
-    console.log(`projects`, projects);
-    
+    return {contributors, projects}
 }
