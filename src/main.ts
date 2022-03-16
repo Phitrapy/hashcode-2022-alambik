@@ -6,8 +6,7 @@ export function main(nomFichier: string) { // C'est ici qu'on exécute le code
     // 1) Lire un fichier en input
     const fichier = lireFichier(nomFichier);
     const situation = readInputFile(fichier);
-    console.log(situation);
-    
+
     // 2) Faire la tambouille
     tambouiller();
 
@@ -32,5 +31,14 @@ function ecrireFichier(nomFichier: string, contenu: any) {
 }
 
 function tambouiller() {
-    console.log(`CA TAMBOUILLE`);
+    
+    /*
+        Stratégies:
+        1) task killer
+            Faire du lean management
+        2) brain up
+            Maximiser les level-up des contributeurs, au détriment des points
+
+        Mesures
+    */
 }
